@@ -1,22 +1,29 @@
 // The nav bar turns blue on mouseover
 const navBar = document.querySelector('.nav-container')
+const logo = document.querySelector(".logo-heading")
 navBar.addEventListener('mouseover', () => {
+    event.stopPropagation();
     navBar.style.backgroundColor = "#33E9FD";
+    logo.style.fontSize = "5rem";
+    logo.style.color = "yellow"
+
 })
 
 // The nav bar goes back to original color on mouseout
 navBar.addEventListener('mouseout', () => {
-    navBar.style.backgroundColor = "#ffffff";
+    navBar.style.backgroundColor = "";
+    logo.style.fontSize = "";
+    logo.style.color = ""
 })
 
 // The nav links turns blue when clicked
 const navLinks = document.querySelectorAll('.nav-link')
 navLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
-    link.style.color = '#D533FD';
+    event.target.style.color = '#D533FD';
     // Add a timer on the links
     setTimeout(function() {
-        event.target.style.color = "black";
+        event.target.style.color = "";
       }, 1000);
     }) 
 })
@@ -24,7 +31,8 @@ navLinks.forEach((link) => {
 // The images get bigger once moused over
 const images = document.querySelectorAll('.img-content')
 images.forEach(image => {
-    image.addEventListener('mouseover', () => {
+    image.addEventListener('mouseover', (e) => {
+        e.stopPropagation();
         image.style.width = "52%"
     })
 })
@@ -59,3 +67,18 @@ body.addEventListener('keydown', (e) => {
     // Hide the bus image on keydown
     firstImage.style.display = "none"
 })
+
+
+const contentSection = document.querySelector(".content-section")
+
+contentSection.addEventListener('mouseover', (e) => {
+    contentSection.style.backgroundColor = "#f5c945";
+
+    setTimeout(function() {
+        contentSection.style.backgroundColor = "";
+      }, 1000);
+})
+console.log(contentSection)
+
+
+

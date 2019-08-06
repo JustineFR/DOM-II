@@ -48,7 +48,11 @@ images.forEach(image => {
 // Change color of the bottom buttons
 const buttons = document.querySelectorAll('.btn')
 buttons.forEach(button => {
+
     button.addEventListener('dblclick', () => {
+        alert('Great Choice!')
+    })
+    button.addEventListener('click', () => {
         button.style.backgroundColor="#8DFEA7";
         button.style.color='#FEA08D'
     })
@@ -108,6 +112,8 @@ destination.addEventListener('mouseup', (e) => {
     destination.style.color = ""
 })
 
+
+TwinMax.to(".logo-heading", 2, {left:600});
 
 
 

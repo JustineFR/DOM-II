@@ -32,6 +32,7 @@ navLinks.forEach((link) => {
 const images = document.querySelectorAll('.img-content')
 images.forEach(image => {
     image.addEventListener('mouseover', (e) => {
+        // Added stop propagation to stop background color to turn yellow (parent element)
         e.stopPropagation();
         image.style.width = "52%"
     })
@@ -68,17 +69,47 @@ body.addEventListener('keydown', (e) => {
     firstImage.style.display = "none"
 })
 
-
+// Added background color on top of content section
 const contentSection = document.querySelector(".content-section")
 
 contentSection.addEventListener('mouseover', (e) => {
-    contentSection.style.backgroundColor = "#f5c945";
-
-    setTimeout(function() {
-        contentSection.style.backgroundColor = "";
-      }, 1000);
+    contentSection.style.backgroundColor = "#439fa2";
+    // contentSection.style.opacity =  "0.5"
 })
-console.log(contentSection)
+
+contentSection.addEventListener('mouseout', (e) => {
+    contentSection.style.backgroundColor = "";
+})
+
+
+// The last image becomes more opaque while clicked on
+const destinationImage = document.querySelector(".content-destination img")
+
+destinationImage.addEventListener('mousedown', (e) => {
+    // Added stoppropagation to prevent the text to turn blue when pic is clicked (red on parent element)
+    e.stopPropagation();
+    destinationImage.style.opacity = "0.5"
+})
+
+// The last image goes back to original once clicked is released
+destinationImage.addEventListener('mouseup', (e) => {
+    destinationImage.style.opacity = ""
+})
+
+
+const destination = document.querySelector(".content-destination")
+
+destination.addEventListener('mousedown', (e) => {
+    destination.style.color = "#1E8BB9"
+})
+
+// The last image goes back to original once clicked is released
+destination.addEventListener('mouseup', (e) => {
+    destination.style.color = ""
+})
+
+
+
 
 
 

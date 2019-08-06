@@ -9,10 +9,26 @@ navBar.addEventListener('mouseout', () => {
     navBar.style.backgroundColor = "#ffffff";
 })
 
-// The nav links turns 
+// The nav links turns blue when clicked
 const navLinks = document.querySelectorAll('.nav-link')
 navLinks.forEach((link) => {
     link.addEventListener('click', () => {
     link.style.color = '#D533FD';
     })
 })
+
+
+// The images get bigger once moused over
+const images = document.querySelectorAll('.img-content')
+images.forEach(image => {
+    image.addEventListener('mouseover', () => {
+        image.style.width = "52%"
+    })
+})
+
+images.forEach(image => {
+    image.addEventListener('mouseout', () => {
+        image.style.width = "48%"
+    })
+})
+    

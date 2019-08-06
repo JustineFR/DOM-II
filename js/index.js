@@ -26,9 +26,23 @@ images.forEach(image => {
     })
 })
 
+// The images get back to original size when moused out
 images.forEach(image => {
     image.addEventListener('mouseout', () => {
         image.style.width = "48%"
     })
 })
-    
+
+// Change color of the buttons
+const buttons = document.querySelectorAll('.btn')
+buttons.forEach(button => {
+    button.addEventListener('dblclick', () => {
+        button.style.backgroundColor="#8DFEA7";
+        button.style.color='#FEA08D'
+    })
+    button.addEventListener('mouseout', () => {
+        button.style.backgroundColor="#FEA08D";
+        button.style.color='#8DFEA7'
+    })
+
+})

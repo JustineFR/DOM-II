@@ -12,11 +12,16 @@ navBar.addEventListener('mouseout', () => {
 // The nav links turns blue when clicked
 const navLinks = document.querySelectorAll('.nav-link')
 navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
     link.style.color = '#D533FD';
-    })
-})
 
+    setTimeout(function() {
+        event.target.style.color = "black";
+      }, 1000);
+    })
+
+    
+})
 
 // The images get bigger once moused over
 const images = document.querySelectorAll('.img-content')
@@ -44,5 +49,11 @@ buttons.forEach(button => {
         button.style.backgroundColor="#FEA08D";
         button.style.color='#8DFEA7'
     })
+})
 
+const body = document.querySelector('body')
+body.addEventListener('click', (e) => {
+    body.style.backgroundImage = url('../img/palmtree.jpeg')
+    // const backImg = body.setAttribute('src', '../img/palmtree.jpeg')
+    // body.setAttribute('src', '../img/palmtree.jpeg')
 })

@@ -49,15 +49,13 @@ buttons.forEach(button => {
     })
 })
 
-
-
-
+// Add a backgound image on keydown
 const body = document.querySelector('body')
+const firstImage = document.querySelector('.intro img')
+
 body.addEventListener('keydown', (e) => {
+    // Add a background image on keydown
     body.setAttribute('style', 'background-image: url("./img/palm3.jpg")')
-    // const backImg = body.setAttribute('src', '../img/palmtree.jpeg')
-    // body.setAttribute('src', '../img/palmtree.jpeg')
+    // Hide the bus image on keydown
+    firstImage.style.display = "none"
 })
-
-
-document.getElementById('banner').setAttribute("style", "background-image: url(" + dir + images[randomCount] + ");background-repeat: no-repeat;background-size: 388px 388px");

@@ -2,7 +2,6 @@
 const navBar = document.querySelector('.nav-container')
 const logo = document.querySelector(".logo-heading")
 navBar.addEventListener('mouseover', () => {
-    event.stopPropagation();
     navBar.style.backgroundColor = "#33E9FD";
     logo.style.fontSize = "5rem";
     logo.style.color = "yellow"
@@ -112,8 +111,19 @@ destination.addEventListener('mouseup', (e) => {
     destination.style.color = ""
 })
 
+// Create a new element
+const logo2 = document.createElement('img');
+logo2.setAttribute("src", "./img/bird2.png");
+logo2.setAttribute("width", "200");
+logo2.classList.add("logoClass")
 
-TwinMax.to(".logo-heading", 2, {left:600});
+
+const header = document.querySelector('header')
+header.appendChild(logo2)
+
+TweenMax.to(".logoClass", 6, {
+    left:1000, 
+});
 
 
 
